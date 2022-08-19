@@ -34,7 +34,7 @@ public class ClienteDAO {
     public List<Cliente> getClientes(){
         try{
             Statement st = conexao.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM tap_db.users u WHERE u.type = 'CLIENT'");
+            ResultSet rs = st.executeQuery("SELECT * FROM self_storage.clientes");
 
             List<Cliente> clientes = new ArrayList<>();
 
