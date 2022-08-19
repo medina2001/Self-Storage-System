@@ -20,6 +20,7 @@ public class CadastroCliente {
 
     public CadastroCliente() {
         initialize();
+        this.frame.setVisible(true);
     }
 
     public JFrame getFrame() {

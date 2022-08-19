@@ -16,7 +16,7 @@ public class ArmazenamentoDAO {
         this.conexao = DatabaseConnectionSetup.getConnection();
     }
 
-    public void criarArmazenamento(Armazenamento armazenamento) throws Exception {
+    public void criarArmazenamento(Armazenamento armazenamento) {
         try{
             Statement st = conexao.createStatement();
             String query = String.format("INSERT INTO self_storage.armazenamentos (categoria, endereco, volume, custo) VALUES ('%s', '%s', '%s', '%s')",

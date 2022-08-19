@@ -18,7 +18,7 @@ public class ClienteDAO {
         this.conexao = DatabaseConnectionSetup.getConnection();
     }
 
-    public void criarCliente(Cliente cliente) throws Exception {
+    public void criarCliente(Cliente cliente) {
         try{
             Statement st = conexao.createStatement();
             String query = String.format("INSERT INTO self_storage.clientes (name, email, senha) VALUES ('%s', '%s', '%s')",
@@ -31,7 +31,7 @@ public class ClienteDAO {
         }
     }
 
-    public List<Cliente> getClientes() throws Exception{
+    public List<Cliente> getClientes(){
         try{
             Statement st = conexao.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM tap_db.users u WHERE u.type = 'CLIENT'");

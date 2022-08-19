@@ -22,7 +22,10 @@ public class CadastroArmazenamento {
     private JTextField volumeTextField;
     private JTextField custoTextField;
 
-    public CadastroArmazenamento() { initialize(); }
+    public CadastroArmazenamento() {
+        initialize();
+        this.frame.setVisible(true);
+    }
 
     public JFrame getFrame() {
         return frame;
