@@ -1,11 +1,12 @@
-import DAO.ClienteDAO;
-import Models.Cliente;
-import Scenes.Cadastro;
-import com.mysql.cj.xdevapi.Client;
+import Models.Armazenamento;
+import Scenes.CadastroArmazenamento;
+import Scenes.CadastroCliente;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Cadastro cadastro = new Cadastro();
-        cadastro.getFrame().setVisible(true);
+        CadastroArmazenamento cadastroArmazenamento = new CadastroArmazenamento();
+        cadastroArmazenamento.getFrame().setVisible(true);
+//        CadastroCliente cadastroCliente = new CadastroCliente();
+//        cadastroCliente.getFrame().setVisible(true);
     }
 }

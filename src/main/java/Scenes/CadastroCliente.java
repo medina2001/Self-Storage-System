@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Cadastro {
+public class CadastroCliente {
     private JFrame frame;
     private JTextField txtNome;
     private JTextField txtEmail;
@@ -18,7 +18,7 @@ public class Cadastro {
     private JLabel senhaLabel;
 
 
-    public Cadastro() {
+    public CadastroCliente() {
         initialize();
     }
 
@@ -37,24 +37,27 @@ public class Cadastro {
         frame.getContentPane().add(cadastrarBtn);
 
         txtNome = new JTextField();
+        txtNome.setForeground(new Color(255, 255, 255));
         txtNome.setBackground(new Color(147, 112, 219));
         txtNome.setBounds(173, 45, 130, 26);
         frame.getContentPane().add(txtNome);
         txtNome.setColumns(10);
 
         txtEmail = new JTextField();
+        txtEmail.setForeground(new Color(255, 255, 255));
         txtEmail.setBackground(new Color(147, 112, 219));
         txtEmail.setBounds(173, 83, 130, 26);
         frame.getContentPane().add(txtEmail);
         txtEmail.setColumns(10);
 
         txtSenha = new JTextField();
+        txtSenha.setForeground(new Color(255, 255, 255));
         txtSenha.setBackground(new Color(147, 112, 219));
         txtSenha.setBounds(173, 121, 130, 26);
         frame.getContentPane().add(txtSenha);
         txtSenha.setColumns(10);
 
-        JLabel cadastroLbl = new JLabel("Cadastro");
+        JLabel cadastroLbl = new JLabel("Cadastro Cliente");
         cadastroLbl.setBounds(208, 6, 61, 16);
         frame.getContentPane().add(cadastroLbl);
 

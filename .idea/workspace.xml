@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67edcf44-0eef-4c95-b813-b7081d7bc1fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AluguelDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/ArmazenamentoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/ClienteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Infrastructure/Extensions/DateExtension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Scenes/CadastroArmazenamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/ArmazenamentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/ArmazenamentoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Aluguel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Armazenamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Armazenamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repositories/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repositories/AluguelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repositories/Armazenamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repositories/ArmazenamentoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repositories/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repositories/ClienteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Scenes/Cadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenes/Cadastro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ServiceLayer/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServiceLayer/DatabaseConnectionSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenes/Cadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenes/CadastroCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +27,31 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1660879184" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1660879183" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
