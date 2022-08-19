@@ -5,20 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67edcf44-0eef-4c95-b813-b7081d7bc1fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tools/DatabaseMechanism.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Aluguel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Armazenamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repositories/Aluguel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repositories/Armazenamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repositories/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenes/Cadastro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ServiceLayer/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AluguelDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/ArmazenamentoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/ClienteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Aluguel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Armazenamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Armazenamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Repositories/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repositories/AluguelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Repositories/Armazenamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repositories/ArmazenamentoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Repositories/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repositories/ClienteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenes/Cadastro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenes/Cadastro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ServiceLayer/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServiceLayer/DatabaseConnectionSetup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +54,10 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RebelAgentSelection">

@@ -1,5 +1,8 @@
 package Scenes;
 
+import DAO.ClienteDAO;
+import Models.Cliente;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,9 +13,9 @@ public class Cadastro {
     private JTextField txtNome;
     private JTextField txtEmail;
     private JTextField txtSenha;
-    private JLabel lblNewLabel_1;
-    private JLabel lblNewLabel_2;
-    private JLabel lblNewLabel_3;
+    private JLabel nameLabel;
+    private JLabel emailLabel;
+    private JLabel senhaLabel;
 
 
     public Cadastro() {
@@ -29,9 +32,9 @@ public class Cadastro {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
-        JButton btnNewButton = new JButton("Cadastrar");
-        btnNewButton.setBounds(180, 159, 117, 29);
-        frame.getContentPane().add(btnNewButton);
+        JButton cadastrarBtn = new JButton("Cadastrar");
+        cadastrarBtn.setBounds(180, 159, 117, 29);
+        frame.getContentPane().add(cadastrarBtn);
 
         txtNome = new JTextField();
         txtNome.setBackground(new Color(147, 112, 219));
@@ -51,28 +54,35 @@ public class Cadastro {
         frame.getContentPane().add(txtSenha);
         txtSenha.setColumns(10);
 
-        JLabel lblNewLabel = new JLabel("Cadastro");
-        lblNewLabel.setBounds(208, 6, 61, 16);
-        frame.getContentPane().add(lblNewLabel);
+        JLabel cadastroLbl = new JLabel("Cadastro");
+        cadastroLbl.setBounds(208, 6, 61, 16);
+        frame.getContentPane().add(cadastroLbl);
 
-        lblNewLabel_1 = new JLabel("Nome");
-        lblNewLabel_1.setBounds(100, 50, 61, 16);
-        frame.getContentPane().add(lblNewLabel_1);
+        nameLabel = new JLabel("Nome");
+        nameLabel.setBounds(100, 50, 61, 16);
+        frame.getContentPane().add(nameLabel);
 
-        lblNewLabel_2 = new JLabel("E-Mail");
-        lblNewLabel_2.setBounds(100, 88, 61, 16);
-        frame.getContentPane().add(lblNewLabel_2);
+        emailLabel = new JLabel("E-Mail");
+        emailLabel.setBounds(100, 88, 61, 16);
+        frame.getContentPane().add(emailLabel);
 
-        lblNewLabel_3 = new JLabel("Senha");
-        lblNewLabel_3.setBounds(100, 126, 61, 16);
-        frame.getContentPane().add(lblNewLabel_3);
+        senhaLabel = new JLabel("Senha");
+        senhaLabel.setBounds(100, 126, 61, 16);
+        frame.getContentPane().add(senhaLabel);
 
-        btnNewButton.addActionListener(new ActionListener() {
+        cadastrarBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String name = txtNome.getText();
                 String email = txtEmail.getText();
                 String senha = txtSenha.getText();
+                Cliente cliente = new Cliente(name, email, senha);
+                ClienteDAO clienteDAO = new ClienteDAO();
+                try {
+                    clienteDAO.criarCliente(cliente);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }
