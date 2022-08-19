@@ -7,7 +7,12 @@ import Models.Armazenamento;
 import Models.Cliente;
 
 import javax.swing.*;
+import javax.swing.text.DateFormatter;
+import javax.swing.text.MaskFormatter;
 import java.awt.*;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +24,7 @@ public class AlugarArmazenamento {
     private ClienteDAO clienteDAO = new ClienteDAO();
     private ArmazenamentoDAO armazenamentoDAO = new ArmazenamentoDAO();
     private AluguelDAO aluguelDAO = new AluguelDAO();
+    private static final DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
 
     public AlugarArmazenamento() {
         initialize();
@@ -48,17 +54,25 @@ public class AlugarArmazenamento {
         this.getClientes(clientesComboBox);
         frame.getContentPane().add(clientesComboBox);
 
-        textField = new JTextField();
-        textField.setForeground(new Color(255, 255, 255));
-        textField.setBackground(new Color(147, 112, 219));
+        JFormattedTextField textField = new JFormattedTextField(df);
         textField.setBounds(145, 116, 218, 26);
+        textField.setColumns(11);
+        try {
+            MaskFormatter dateMask = new MaskFormatter("####/##/##");
+            dateMask.install(textField);
+        } catch (ParseException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
         frame.getContentPane().add(textField);
-        textField.setColumns(10);
 
-        textField_1 = new JTextField();
-        textField_1.setForeground(new Color(255, 255, 255));
-        textField_1.setBackground(new Color(147, 112, 219));
-        textField_1.setColumns(10);
+        JFormattedTextField textField_1 = new JFormattedTextField(df);
+        textField_1.setColumns(11);
+        try {
+            MaskFormatter dateMask = new MaskFormatter("####/##/##");
+            dateMask.install(textField_1);
+        } catch (ParseException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
         textField_1.setBounds(145, 154, 218, 26);
         frame.getContentPane().add(textField_1);
 
