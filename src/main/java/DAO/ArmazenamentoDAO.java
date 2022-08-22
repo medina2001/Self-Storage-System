@@ -1,7 +1,6 @@
 package DAO;
 
 import Models.Armazenamento;
-import Models.Cliente;
 import ServiceLayer.DatabaseConnectionSetup;
 
 import java.sql.Connection;
@@ -47,7 +46,6 @@ public class ArmazenamentoDAO {
                         rs.getFloat("custo")));
 
             }
-            System.out.println(armazenamentos.size());
             return armazenamentos;
         } catch(SQLException e) {
             System.out.println(e.getLocalizedMessage());
@@ -68,6 +66,22 @@ public class ArmazenamentoDAO {
             System.out.printf("Armazenamento do tipo %s atualizado com sucesso!", newArmazenamento.getCategoria());
         } catch(SQLException e) {
             System.out.println(e.getLocalizedMessage());
+        }
+    }
+
+    public Integer getArmazenamentoIdByName(String nomeArmazenamento){
+        try{
+            Statement st = conexao.createStatement();
+            String query = String.format("SELECT id FROM self_storage.armazenamentos WHERE categoria='%s';", nomeArmazenamento);
+            ResultSet rs = st.executeQuery(query);
+            Integer id = null;
+            if (rs.next()){
+                id = rs.getInt("id");
+            }
+            return id;
+        } catch (SQLException e){
+            System.out.println(e.getLocalizedMessage());
+            return null;
         }
     }
 }

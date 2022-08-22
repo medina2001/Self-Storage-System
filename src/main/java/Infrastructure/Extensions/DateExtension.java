@@ -13,6 +13,11 @@ public class DateExtension {
         return yyyyMMdd;
     }
 
+    public String modifyDateLayout(String inputDate) throws ParseException{
+        Date date = new SimpleDateFormat("yyyy/MM/dd").parse(inputDate);
+        return new SimpleDateFormat("yyyy-MM-dd").format(date);
+    }
+
     public Date stringToDate(String dateString){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;

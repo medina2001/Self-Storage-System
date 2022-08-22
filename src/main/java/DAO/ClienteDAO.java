@@ -41,9 +41,24 @@ public class ClienteDAO {
             while (rs.next()){
                 clientes.add(new Cliente(rs.getInt("id"), rs.getString("name"), rs.getString("email")));
             }
-            System.out.println(clientes.size());
             return clientes;
         } catch(SQLException e) {
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    public Integer getClienteIdByName(String nomeCliente){
+        try{
+            Statement st = conexao.createStatement();
+            String query = String.format("SELECT id FROM self_storage.clientes WHERE name='%s';", nomeCliente);
+            ResultSet rs = st.executeQuery(query);
+            Integer id = null;
+            if(rs.next()){
+                id = rs.getInt("id");
+            }
+            return id;
+        } catch (SQLException e){
             System.out.println(e.getLocalizedMessage());
             return null;
         }

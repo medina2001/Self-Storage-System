@@ -3,11 +3,12 @@ package Scenes;
 import DAO.AluguelDAO;
 import DAO.ArmazenamentoDAO;
 import DAO.ClienteDAO;
+import Infrastructure.Extensions.DateExtension;
+import Models.Aluguel;
 import Models.Armazenamento;
 import Models.Cliente;
 
 import javax.swing.*;
-import javax.swing.text.DateFormatter;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -43,10 +44,10 @@ public class AlugarArmazenamento {
         backBtn.setBounds(6, 6, 85, 29);
         frame.getContentPane().add(backBtn);
 
-        JLabel lblNewLabel = new JLabel("Aluguel de Armazenamento");
-        lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-        lblNewLabel.setBounds(145, 6, 218, 20);
-        frame.getContentPane().add(lblNewLabel);
+        JLabel titleLabel = new JLabel("Aluguel de Armazenamento");
+        titleLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+        titleLabel.setBounds(145, 6, 218, 20);
+        frame.getContentPane().add(titleLabel);
 
         JComboBox categoriasComboBox = new JComboBox();
         categoriasComboBox.setBackground(new Color(147, 112, 219));
@@ -60,44 +61,42 @@ public class AlugarArmazenamento {
         this.getClientes(clientesComboBox);
         frame.getContentPane().add(clientesComboBox);
 
-        JFormattedTextField textField = new JFormattedTextField(df);
-        textField.setBounds(145, 116, 218, 26);
-//        textField.setColumns(11);
+        JFormattedTextField dataInicioTF = new JFormattedTextField();
+        dataInicioTF.setBounds(145, 116, 218, 26);
         try {
             MaskFormatter dateMask = new MaskFormatter("####/##/##");
-            dateMask.install(textField);
+            dateMask.install(dataInicioTF);
         } catch (ParseException ex) {
             System.out.println(ex.getLocalizedMessage());
         }
-        frame.getContentPane().add(textField);
+        frame.getContentPane().add(dataInicioTF);
 
-        JFormattedTextField textField_1 = new JFormattedTextField(df);
-//        textField_1.setColumns(11);
+        JFormattedTextField dataFimTF = new JFormattedTextField();
         try {
             MaskFormatter dateMask = new MaskFormatter("####/##/##");
-            dateMask.install(textField_1);
+            dateMask.install(dataFimTF);
         } catch (ParseException ex) {
             System.out.println(ex.getLocalizedMessage());
         }
-        textField_1.setBounds(145, 154, 218, 26);
-        frame.getContentPane().add(textField_1);
+        dataFimTF.setBounds(145, 154, 218, 26);
+        frame.getContentPane().add(dataFimTF);
 
-        JCheckBox chckbxNewCheckBox = new JCheckBox("Seguro");
-        chckbxNewCheckBox.setBounds(145, 192, 75, 23);
-        frame.getContentPane().add(chckbxNewCheckBox);
+        JCheckBox seguroCB = new JCheckBox("Seguro");
+        seguroCB.setBounds(145, 192, 75, 23);
+        frame.getContentPane().add(seguroCB);
 
-        JCheckBox chckbxChaveExtra = new JCheckBox("Chave Extra");
-        chckbxChaveExtra.setBounds(145, 227, 106, 23);
-        frame.getContentPane().add(chckbxChaveExtra);
+        JCheckBox chaveExtraCB = new JCheckBox("Chave Extra");
+        chaveExtraCB.setBounds(145, 227, 106, 23);
+        frame.getContentPane().add(chaveExtraCB);
 
-        JCheckBox chckbxControleClimtico = new JCheckBox("Controle Climático");
-        chckbxControleClimtico.setBounds(145, 262, 150, 23);
-        frame.getContentPane().add(chckbxControleClimtico);
+        JCheckBox controleClimaticoCB = new JCheckBox("Controle Climático");
+        controleClimaticoCB.setBounds(145, 262, 150, 23);
+        frame.getContentPane().add(controleClimaticoCB);
 
-        JButton btnNewButton = new JButton("Alugar");
-        btnNewButton.setBackground(new Color(255, 255, 0));
-        btnNewButton.setBounds(196, 297, 117, 29);
-        frame.getContentPane().add(btnNewButton);
+        JButton alugarBtn = new JButton("Alugar");
+        alugarBtn.setBackground(new Color(255, 255, 0));
+        alugarBtn.setBounds(196, 297, 117, 29);
+        frame.getContentPane().add(alugarBtn);
 
         JLabel lblNewLabel_1 = new JLabel("Data de Início:");
         lblNewLabel_1.setBounds(16, 121, 91, 16);
@@ -114,6 +113,38 @@ public class AlugarArmazenamento {
                 frame.setVisible(false);
             }
         });
+
+        alugarBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Aluguel aluguel = new Aluguel();
+                try {
+                    DateExtension dateExtension = new DateExtension();
+                    String dataInicio = dataInicioTF.getText();
+                    String dataFim = dataFimTF.getText();
+                    String dataI = dateExtension.modifyDateLayout(dataInicio);
+                    String dataF = dateExtension.modifyDateLayout(dataFim);
+                    Integer seguro = seguroCB.isSelected() ? 1 : 0;
+                    Integer chaveExtra = chaveExtraCB.isSelected() ? 1 : 0;
+                    Integer controleClimativo = controleClimaticoCB.isSelected() ? 1 : 0;
+                    String cliente = clientesComboBox.getSelectedItem() !=null ? clientesComboBox.getSelectedItem().toString() : "";
+                    String categoria = categoriasComboBox.getSelectedItem() !=null ? categoriasComboBox.getSelectedItem().toString() : "";
+
+                    aluguel.setDataInicio(dateExtension.stringToDate(dataI));
+                    aluguel.setDataFim(dateExtension.stringToDate(dataF));
+                    aluguel.setClientId(clienteDAO.getClienteIdByName(cliente));
+                    aluguel.setArmazenamentoId(armazenamentoDAO.getArmazenamentoIdByName(categoria));
+                    aluguel.setSeguro(seguro);
+                    aluguel.setChaveExtra(chaveExtra);
+                    aluguel.setControleClimatico(controleClimativo);
+
+                    aluguelDAO.criarAluguel(aluguel);
+                } catch (Exception exception) {
+                    System.out.println(exception.getLocalizedMessage());
+                }
+            }
+        });
+
     }
 
     private void getClientes(JComboBox comboBox){
