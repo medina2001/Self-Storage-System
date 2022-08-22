@@ -122,8 +122,8 @@ public class AlugarArmazenamento {
                     DateExtension dateExtension = new DateExtension();
                     String dataInicio = dataInicioTF.getText();
                     String dataFim = dataFimTF.getText();
-                    String dataI = dateExtension.modifyDateLayout(dataInicio);
-                    String dataF = dateExtension.modifyDateLayout(dataFim);
+                    String dataI = dateExtension.normalToDBDate(dataInicio);
+                    String dataF = dateExtension.normalToDBDate(dataFim);
                     Integer seguro = seguroCB.isSelected() ? 1 : 0;
                     Integer chaveExtra = chaveExtraCB.isSelected() ? 1 : 0;
                     Integer controleClimativo = controleClimaticoCB.isSelected() ? 1 : 0;
@@ -139,6 +139,7 @@ public class AlugarArmazenamento {
                     aluguel.setControleClimatico(controleClimativo);
 
                     aluguelDAO.criarAluguel(aluguel);
+                    Relatorio relatorio = new Relatorio(aluguel, cliente, categoria);
                 } catch (Exception exception) {
                     System.out.println(exception.getLocalizedMessage());
                 }

@@ -2,8 +2,6 @@ package Infrastructure.Extensions;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class DateExtension {
@@ -13,9 +11,24 @@ public class DateExtension {
         return yyyyMMdd;
     }
 
-    public String modifyDateLayout(String inputDate) throws ParseException{
-        Date date = new SimpleDateFormat("yyyy/MM/dd").parse(inputDate);
-        return new SimpleDateFormat("yyyy-MM-dd").format(date);
+    public String normalToDBDate(String inputDate) throws ParseException{
+        try {
+            Date date = new SimpleDateFormat("yyyy/MM/dd").parse(inputDate);
+            return new SimpleDateFormat("yyyy-MM-dd").format(date);
+        } catch (ParseException e){
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    public String dBDateToNormal(String inputDate){
+        try {
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(inputDate);
+            return new SimpleDateFormat("yyyy/MM/dd").format(date);
+        } catch (ParseException e){
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
     }
 
     public Date stringToDate(String dateString){

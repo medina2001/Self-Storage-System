@@ -84,4 +84,24 @@ public class ArmazenamentoDAO {
             return null;
         }
     }
+
+    public Armazenamento getArmazenamentoByName(String nomeArmazenamento){
+        try{
+            Statement st = conexao.createStatement();
+            String query = String.format("SELECT * FROM self_storage.armazenamentos WHERE categoria='%s';", nomeArmazenamento);
+            ResultSet rs = st.executeQuery(query);
+            Armazenamento armazenamento = new Armazenamento();
+
+            if (rs.next()){
+                armazenamento.setEndereco(rs.getString("endereco"));
+                armazenamento.setCategoria(rs.getString("categoria"));
+                armazenamento.setCusto(rs.getInt("custo"));
+                armazenamento.setVolume(rs.getString("volume"));
+            }
+            return armazenamento;
+        } catch (SQLException e){
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
 }
