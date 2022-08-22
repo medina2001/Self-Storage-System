@@ -10,6 +10,8 @@ import javax.swing.*;
 import javax.swing.text.DateFormatter;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -37,6 +39,10 @@ public class AlugarArmazenamento {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
+        JButton backBtn = new JButton("<Voltar");
+        backBtn.setBounds(6, 6, 85, 29);
+        frame.getContentPane().add(backBtn);
+
         JLabel lblNewLabel = new JLabel("Aluguel de Armazenamento");
         lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
         lblNewLabel.setBounds(145, 6, 218, 20);
@@ -56,7 +62,7 @@ public class AlugarArmazenamento {
 
         JFormattedTextField textField = new JFormattedTextField(df);
         textField.setBounds(145, 116, 218, 26);
-        textField.setColumns(11);
+//        textField.setColumns(11);
         try {
             MaskFormatter dateMask = new MaskFormatter("####/##/##");
             dateMask.install(textField);
@@ -66,7 +72,7 @@ public class AlugarArmazenamento {
         frame.getContentPane().add(textField);
 
         JFormattedTextField textField_1 = new JFormattedTextField(df);
-        textField_1.setColumns(11);
+//        textField_1.setColumns(11);
         try {
             MaskFormatter dateMask = new MaskFormatter("####/##/##");
             dateMask.install(textField_1);
@@ -100,6 +106,14 @@ public class AlugarArmazenamento {
         JLabel lblNewLabel_1_1 = new JLabel("Data de Devolução:");
         lblNewLabel_1_1.setBounds(16, 159, 122, 16);
         frame.getContentPane().add(lblNewLabel_1_1);
+
+        backBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                HomeView homeView = new HomeView();
+                frame.setVisible(false);
+            }
+        });
     }
 
     private void getClientes(JComboBox comboBox){

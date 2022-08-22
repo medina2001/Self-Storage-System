@@ -8,6 +8,7 @@ import Models.Cliente;
 import Scenes.AlugarArmazenamento;
 import Scenes.CadastroArmazenamento;
 import Scenes.CadastroCliente;
+import Scenes.HomeView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -16,6 +17,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        AlugarArmazenamento alugarArmazenamento = new AlugarArmazenamento();
+        HomeView homeView = new HomeView();
     }
 }

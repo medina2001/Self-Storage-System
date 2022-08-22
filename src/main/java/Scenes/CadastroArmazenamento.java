@@ -37,6 +37,10 @@ public class CadastroArmazenamento {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
+        JButton backBtn = new JButton("<Voltar");
+        backBtn.setBounds(6, 6, 85, 29);
+        frame.getContentPane().add(backBtn);
+
         JLabel titleLabel = new JLabel("Cadastro de Armazenamentos");
         titleLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
         titleLabel.setBounds(109, 6, 267, 16);
@@ -90,6 +94,14 @@ public class CadastroArmazenamento {
         JLabel categoriaLabel = new JLabel("Categoria");
         categoriaLabel.setBounds(60, 53, 61, 16);
         frame.getContentPane().add(categoriaLabel);
+
+        backBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                HomeView homeView = new HomeView();
+                frame.setVisible(false);
+            }
+        });
 
         cadastrarBtn.addActionListener(new ActionListener() {
             @Override
