@@ -63,7 +63,8 @@ public class CadastroCliente {
         txtSenha.setColumns(10);
 
         JLabel cadastroLbl = new JLabel("Cadastro Cliente");
-        cadastroLbl.setBounds(208, 6, 61, 16);
+        cadastroLbl.setBounds(0, 6, 450, 16);
+        cadastroLbl.setHorizontalAlignment(SwingConstants.CENTER);
         frame.getContentPane().add(cadastroLbl);
 
         nameLabel = new JLabel("Nome");

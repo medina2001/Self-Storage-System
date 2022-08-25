@@ -139,11 +139,11 @@ public class AlugarArmazenamento {
                     aluguel.setControleClimatico(controleClimativo);
 
                     aluguelDAO.criarAluguel(aluguel);
+                    HomeView homeView = new HomeView();
                     Relatorio relatorio = new Relatorio(aluguel, cliente, categoria);
                 } catch (Exception exception) {
                     System.out.println(exception.getLocalizedMessage());
                 }
-                HomeView homeView = new HomeView();
                 frame.setVisible(false);
             }
         });

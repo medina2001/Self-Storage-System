@@ -56,7 +56,6 @@ public class AluguelDAO {
                         rs.getFloat("custo")));
 
             }
-            System.out.println(armazenamentos.size());
             return armazenamentos;
         } catch (SQLException e){
             System.out.println(e.getLocalizedMessage());
