@@ -3,7 +3,6 @@ package DAO;
 import Infrastructure.Extensions.DateExtension;
 import Models.Aluguel;
 import Models.Armazenamento;
-import Models.Cliente;
 import ServiceLayer.DatabaseConnectionSetup;
 
 import java.sql.Connection;
@@ -33,7 +32,7 @@ public class AluguelDAO {
         try {
             Statement st = conexao.createStatement();
             String query = String.format("INSERT INTO self_storage.aluguel (dataInicio, dataFim, seguro, chaveExtra, controleClimatico, clienteId, armazenamentoId) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",
-                    dateExtension.dateToString(aluguel.getDataInicio()), dateExtension.dateToString(aluguel.getDataFim()), aluguel.getSeguro(), aluguel.getChaveExtra(), aluguel.getControleClimatico(), aluguel.getClientId(), aluguel.getArmazenamentoId()
+                    dateExtension.dateToStringDB(aluguel.getDataInicio()), dateExtension.dateToStringDB(aluguel.getDataFim()), aluguel.getSeguro(), aluguel.getChaveExtra(), aluguel.getControleClimatico(), aluguel.getClientId(), aluguel.getArmazenamentoId()
             );
             st.executeUpdate(query);
             System.out.println("Aluguel realizado com sucesso!");

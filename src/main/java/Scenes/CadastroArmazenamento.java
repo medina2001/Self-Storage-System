@@ -50,9 +50,9 @@ public class CadastroArmazenamento {
         categoriaComboBox.setBounds(144, 49, 196, 27);
         frame.getContentPane().add(categoriaComboBox);
         categoriaComboBox.addItem("Guarda-Volumes");
-        categoriaComboBox.addItem("Contêineres");
-        categoriaComboBox.addItem("Quartos");
-        categoriaComboBox.addItem("Galpões");
+        categoriaComboBox.addItem("Contêiner");
+        categoriaComboBox.addItem("Quarto");
+        categoriaComboBox.addItem("Galpão");
 
         enderecoTextField = new JTextField();
         enderecoTextField.setForeground(new Color(255, 255, 255));
@@ -118,6 +118,8 @@ public class CadastroArmazenamento {
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
+                HomeView homeView = new HomeView();
+                frame.setVisible(false);
             }
         });
     }

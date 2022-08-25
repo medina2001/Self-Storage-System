@@ -5,8 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateExtension {
-    public String dateToString(Date date){
+    public String dateToStringDB(Date date){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String yyyyMMdd = sdf.format(date);
+        return yyyyMMdd;
+    }
+
+    public String dateToString(Date date){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String yyyyMMdd = sdf.format(date);
         return yyyyMMdd;
     }

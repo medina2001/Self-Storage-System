@@ -99,6 +99,8 @@ public class CadastroCliente {
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
+                HomeView homeView = new HomeView();
+                frame.setVisible(false);
             }
         });
     }

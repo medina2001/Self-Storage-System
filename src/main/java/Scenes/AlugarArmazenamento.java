@@ -143,6 +143,8 @@ public class AlugarArmazenamento {
                 } catch (Exception exception) {
                     System.out.println(exception.getLocalizedMessage());
                 }
+                HomeView homeView = new HomeView();
+                frame.setVisible(false);
             }
         });
 

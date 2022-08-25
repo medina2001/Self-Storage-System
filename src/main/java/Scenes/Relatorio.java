@@ -30,6 +30,8 @@ public class Relatorio {
         this.nomeCliente = nomeCliente;
         this.categoriaArmazenamento = categoriaArmazenamento;
         this.armazenamento = this.armazenamentoDAO.getArmazenamentoByName(categoriaArmazenamento);
+        initialize();
+        this.frame.setVisible(true);
     }
 
     private void initialize() {
@@ -83,8 +85,10 @@ public class Relatorio {
         switch (aluguel.getSeguro()){
             case 1:
                 seguroCB.setSelected(true);
+                break;
             case 0:
                 seguroCB.setSelected(false);
+                break;
             default:
                 seguroCB.setText("N/A");
         }
@@ -94,11 +98,13 @@ public class Relatorio {
         chaveCB.setBounds(131, 227, 128, 23);
         switch (aluguel.getChaveExtra()){
             case 1:
-                seguroCB.setSelected(true);
+                chaveCB.setSelected(true);
+                break;
             case 0:
-                seguroCB.setSelected(false);
+                chaveCB.setSelected(false);
+                break;
             default:
-                seguroCB.setText("N/A");
+                chaveCB.setText("N/A");
         }
         frame.getContentPane().add(chaveCB);
 
@@ -106,11 +112,13 @@ public class Relatorio {
         controleClimaCB.setBounds(131, 255, 128, 23);
         switch (aluguel.getControleClimatico()){
             case 1:
-                seguroCB.setSelected(true);
+                controleClimaCB.setSelected(true);
+                break;
             case 0:
-                seguroCB.setSelected(false);
+                controleClimaCB.setSelected(false);
+                break;
             default:
-                seguroCB.setText("N/A");
+                controleClimaCB.setText("N/A");
         }
         frame.getContentPane().add(controleClimaCB);
 
@@ -132,19 +140,17 @@ public class Relatorio {
         custoLabel.setText(custo);
         frame.getContentPane().add(custoLabel);
 
-        JLabel dataInicioLabel = new JLabel(dateExtension.dBDateToNormal(aluguel.getDataInicio().toString()));
+        JLabel dataInicioLabel = new JLabel(dateExtension.dateToString(aluguel.getDataInicio()));
         dataInicioLabel.setBounds(160, 147, 284, 16);
         frame.getContentPane().add(dataInicioLabel);
 
-        JLabel dataFimLabel = new JLabel(dateExtension.dBDateToNormal(aluguel.getDataFim().toString()));
+        JLabel dataFimLabel = new JLabel(dateExtension.dateToString(aluguel.getDataFim()));
         dataFimLabel.setBounds(160, 175, 284, 16);
         frame.getContentPane().add(dataFimLabel);
 
         JButton okBtn = new JButton("Ok");
         okBtn.setBounds(155, 290, 117, 29);
         frame.getContentPane().add(okBtn);
-
-
 
         okBtn.addActionListener(new ActionListener() {
             @Override

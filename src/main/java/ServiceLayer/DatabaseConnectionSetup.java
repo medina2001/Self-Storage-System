@@ -27,7 +27,7 @@ public class DatabaseConnectionSetup {
 
     private static void connect(){
         try{
-            connection = DriverManager.getConnection(url, cliente,password);
+            connection = DriverManager.getConnection(url, cliente, password);
             System.out.println("Conectado ao Banco de Dados");
         }catch (SQLException e){
             throw new RuntimeException(e);
