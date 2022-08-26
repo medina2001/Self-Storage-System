@@ -49,11 +49,19 @@ public class AlugarArmazenamento {
         titleLabel.setBounds(145, 6, 218, 20);
         frame.getContentPane().add(titleLabel);
 
+        JLabel categoriaCBLabel = new JLabel("Categoria:");
+        categoriaCBLabel.setBounds(75, 40, 91, 16);
+        frame.getContentPane().add(categoriaCBLabel);
+
         JComboBox categoriasComboBox = new JComboBox();
         categoriasComboBox.setBackground(new Color(147, 112, 219));
         categoriasComboBox.setBounds(145, 38, 218, 27);
         this.getArmazenamentos(categoriasComboBox);
         frame.getContentPane().add(categoriasComboBox);
+
+        JLabel clienteCBLabel = new JLabel("Cliente:");
+        clienteCBLabel.setBounds(75, 80, 91, 16);
+        frame.getContentPane().add(clienteCBLabel);
 
         JComboBox clientesComboBox = new JComboBox();
         clientesComboBox.setBackground(new Color(147, 112, 219));

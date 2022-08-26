@@ -21,8 +21,8 @@ public class HomeView {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
-        JLabel lblNewLabel = new JLabel("Self Storage System");
-        lblNewLabel.setBounds(0, 0, 450, 21);
+        JLabel lblNewLabel = new JLabel("Auto-serviço de Armazenamento");
+        lblNewLabel.setBounds(0, 8, 450, 21);
         lblNewLabel.setFont(new Font("Microsoft Sans Serif", Font.BOLD, 18));
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         frame.getContentPane().add(lblNewLabel);
