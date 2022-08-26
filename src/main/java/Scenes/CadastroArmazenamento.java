@@ -57,21 +57,21 @@ public class CadastroArmazenamento {
         enderecoTextField = new JTextField();
         enderecoTextField.setForeground(new Color(255, 255, 255));
         enderecoTextField.setBackground(new Color(147, 112, 219));
-        enderecoTextField.setBounds(144, 88, 196, 26);
+        enderecoTextField.setBounds(144, 88, 230, 26);
         frame.getContentPane().add(enderecoTextField);
         enderecoTextField.setColumns(10);
 
         volumeTextField = new JTextField();
         volumeTextField.setForeground(new Color(255, 255, 255));
         volumeTextField.setBackground(new Color(147, 112, 219));
-        volumeTextField.setBounds(144, 126, 196, 26);
+        volumeTextField.setBounds(144, 126, 230, 26);
         frame.getContentPane().add(volumeTextField);
         volumeTextField.setColumns(10);
 
         custoTextField = new JTextField();
         custoTextField.setForeground(new Color(255, 255, 255));
         custoTextField.setBackground(new Color(147, 112, 219));
-        custoTextField.setBounds(144, 164, 196, 26);
+        custoTextField.setBounds(144, 164, 230, 26);
         frame.getContentPane().add(custoTextField);
         custoTextField.setColumns(10);
 
@@ -79,8 +79,8 @@ public class CadastroArmazenamento {
         cadastrarBtn.setBounds(184, 202, 117, 29);
         frame.getContentPane().add(cadastrarBtn);
 
-        JLabel enderecoLabel = new JLabel("Endereço");
-        enderecoLabel.setBounds(60, 93, 61, 16);
+        JLabel enderecoLabel = new JLabel("Endereço (Nº)");
+        enderecoLabel.setBounds(60, 93, 90, 16);
         frame.getContentPane().add(enderecoLabel);
 
         JLabel volumeLabel = new JLabel("Volume");
